@@ -1,0 +1,25 @@
+.transaction-table {
+  margin: 30px auto;
+
+  .status {
+    float: right;
+    margin: 25px 0;
+    background: #c8d6e5;
+    border-radius: 10px;
+    display: inline-block;
+    
+    span {
+      display: inline-block;
+      padding: 10px 30px;
+      border-radius: 10px;
+    }
+
+    span:first-of-type {
+      padding-right: 15px;
+    }
+
+    span:last-of-type {
+      background: #00d2d3;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+// Typography
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+// Canadian Colors, eh?!
+// https://flatuicolors.com/palette/ca
+
+.App {
+  max-width: 600px;
+  margin: 50px auto 100px;
+  padding: 0 25px;
+  color: #222f3e;
+
+
+  h1, h2 {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.5px;
+  }
+
+  div {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  @import 'Balance';
+  @import 'Form';
+  @import 'Table';
+}

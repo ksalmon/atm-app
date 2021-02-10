@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-function App() {
+import getTransactions from "actions/transactions/getTransactions";
+
+import TotalBalance from "components/TotalBalance";
+import TransactionForm from "components/TransactionForm";
+import TransactionTable from "components/TransactionTable";
+import "./styles/index.scss";
+
+import { isEmpty } from "lodash";
+
+const App: React.FC<any> = () => {
+  const dispatch = useDispatch();
+
+  const transactions = useSelector(
+    (state: any) => state.transactions.collection
+  );
+
+  useEffect(() => {
+    isEmpty(transactions) && dispatch(getTransactions());
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TotalBalance />
+      <TransactionForm />
+      <TransactionTable />
     </div>
   );
-}
+};
 
 export default App;

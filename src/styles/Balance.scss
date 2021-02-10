@@ -1,0 +1,10 @@
+.total-balance {
+  font-size: 25px;
+  margin-bottom: 30px;
+  transition: all 0.5s ease;
+  color: #1dd1a1;
+
+  &.low-balance {
+    color: #ee5253;
+  }
+}
