@@ -24,12 +24,12 @@ const TransactionForm: React.FC<any> = () => {
       hasError = true;
     };
 
-    if (withdrawAmount < 0) setFormError("Cannot Withdraw negitive ammounts");
+    if (withdrawAmount <= 0) setFormError("Cannot withdraw this amount");
     if (!(withdrawAmount % 20 === 0))
       setFormError("Withdraw amount must be divisible by 20");
     if (Math.sign(nextAmmount) < 0)
       setFormError(
-        "Withdraw amount is greater then the current account balance"
+        "Withdraw amount is greater than the current account balance"
       );
 
     if (hasError) return;
